@@ -1,7 +1,7 @@
 export interface Ocorrencia {
-    id: number,
-    regiao_id: number,
+    id: string,
+    regiaoId: number,
     mes: number,
-    faixa_id: number,
-    qtd_exames: number
+    faixaId: number,
+    qtdExames: number
 }

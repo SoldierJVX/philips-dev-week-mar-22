@@ -1,13 +1,17 @@
+import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { Observable } from 'rxjs';
+import { FaixaEtaria } from '../model/faixa-etaria';
 
 @Injectable({
   providedIn: 'root'
 })
 export class FaixaEtariaService {
 
-  constructor() { }
+  constructor(private http: HttpClient) { }
 
-  listFaixaEtaria(): import("../model/faixa-etaria").FaixaEtaria[] {
-    throw new Error('Method not implemented.');
+  listFaixaEtaria(): Observable<FaixaEtaria[]> {
+    const url = 'http://localhost:8080/faixaetaria';
+    return this.http.get<FaixaEtaria[]>(url);
   }
 }
