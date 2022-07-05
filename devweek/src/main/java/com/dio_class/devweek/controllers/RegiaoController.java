@@ -60,7 +60,7 @@ public class RegiaoController {
     @PostMapping
     @Operation(summary = "Save one Regiao")
     public ResponseEntity<Object> saveRegiao(@RequestBody Regiao regiao){
-        return ResponseEntity.status(HttpStatus.OK).body(service.save(regiao));
+        return ResponseEntity.status(HttpStatus.CREATED).body(service.save(regiao));
     }
 
     @PutMapping("/{id}")
